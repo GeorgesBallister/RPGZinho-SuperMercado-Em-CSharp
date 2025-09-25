@@ -27,18 +27,38 @@ public class Program
         Console.WriteLine("Pressione alguma Enter para continuar:");
         Console.Read();
 
-        while (true)
+
+
+
+        bool menuOnOff = true;
+        while (menuOnOff)
         {
             // Menu
             Console.WriteLine("======Menu======");
-            Console.WriteLine("1 - Adcionar item na sacola");
+            Console.WriteLine("1 - Explorar Mercado");
             Console.WriteLine("2 - Remover item da sacola");
             Console.WriteLine("3 - Adcionar item na sacola");
-            Console.WriteLine("");
-            Console.WriteLine("");
+            Console.WriteLine("4 - Ver Lista");
+            Console.WriteLine("5 - Comprar tudo");
+            Console.WriteLine("6 - Ir Embora");
+
+            int opcaoMenu = Int32.Parse(Console.ReadLine());
+
+            switch (opcaoMenu)
+            {
+                case 1:
+                    Console.WriteLine("Explorando mercado");
+                    break;
+
+                case default:
+                    Console.WriteLine("opção invaldia");
+                    break;
+            }
 
 
-            break;
+
+
+           menuOnOff = false;
         }
 
 
