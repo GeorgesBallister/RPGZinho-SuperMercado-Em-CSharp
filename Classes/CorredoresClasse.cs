@@ -18,5 +18,6 @@ namespace Classes
             this.CategoriaDoCorredor= categoria;
             this.Prateleiras = prateleira;
         }
+
     }
 }

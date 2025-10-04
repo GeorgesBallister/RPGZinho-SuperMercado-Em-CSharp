@@ -25,7 +25,8 @@ public class Program
 
         Console.WriteLine("Seja bem vindo ao mercadinho Legal, onde voce pode comprar suas muambas");
         Console.WriteLine("Pressione alguma Enter para continuar:");
-        Console.Read();
+        Console.ReadLine();
+        Console.Clear();
 
 
 
@@ -41,26 +42,34 @@ public class Program
             Console.WriteLine("4 - Ver Lista");
             Console.WriteLine("5 - Comprar tudo");
             Console.WriteLine("6 - Ir Embora");
+            Console.WriteLine("\nDigite uma opção:");
 
-            int opcaoMenu = Int32.Parse(Console.ReadLine());
+            int opcaoMenu;
+
+            int.TryParse(Console.ReadLine(), out opcaoMenu);
 
             switch (opcaoMenu)
             {
                 case 1:
+                    Console.Clear();
                     Console.WriteLine("Explorando mercado");
+                    CriandoDados.FuncaoTeste();
                     break;
 
-                case default:
+                case 6:
+                    Console.Clear();
+                    menuOnOff = false;
+                    break;
+
+                default:
+                    Console.Clear();
                     Console.WriteLine("opção invaldia");
                     break;
             }
 
-
-
-
-           menuOnOff = false;
         }
 
+        Console.WriteLine("Saindo do programa....");
 
     }
 }
