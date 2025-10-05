@@ -6,18 +6,27 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    internal class Prateleira
+    public class Prateleira
     {
         public string Categoria { get; set; }
         public int ID { get; set; }
         public List<Itens> Itens { get; set; } = new List<Itens>();
 
-
+        public Prateleira() { }
+        
         public Prateleira(string categoria, int numeroPrateleira, List<Itens> itensLista)
         {
-            this.Categoria = categoria;
             this.ID = numeroPrateleira;
+            this.Categoria = categoria;
             this.Itens = itensLista;
+        }
+
+
+        // Testar 
+        public void TestarPrateleiras()
+        {
+            Console.WriteLine(this.ID);
+            Console.WriteLine(this.Categoria);
         }
     }
 }

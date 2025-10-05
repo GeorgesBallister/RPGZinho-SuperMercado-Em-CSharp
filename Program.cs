@@ -9,6 +9,16 @@ public class Program
 {
     public static void Main()
     {
+        // Criando Itens
+        Dictionary<int, Itens> TodosOsItensDoMercado = CriandoDados.CriandoItens();
+
+        //Criando prateleiras
+        Dictionary<int, Prateleira> TodasAsPrateleirasDoMercado = CriandoDados.CriandoPrateleiras(TodosOsItensDoMercado);
+
+        foreach (var values in TodasAsPrateleirasDoMercado)
+        {
+            values.Value.TestarPrateleiras();
+        }
 
         // Crud Lista de compras
         // Criar Itens Ficticios
@@ -53,7 +63,6 @@ public class Program
                 case 1:
                     Console.Clear();
                     Console.WriteLine("Explorando mercado");
-                    CriandoDados.FuncaoTeste();
                     break;
 
                 case 6:

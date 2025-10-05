@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    internal class CorredoresClasse
+    public class CorredoresClasse
     {
         public int NumeroDoCorredor {  get; set; }
         public string CategoriaDoCorredor { get; set; }

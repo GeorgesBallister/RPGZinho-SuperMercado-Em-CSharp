@@ -1,0 +1,142 @@
+﻿[
+  {
+    "ID": 1,
+    "Nome": "Espada Longa de Aço",
+    "Categoria": "Arma",
+    "Valor": 250,
+    "Quantidade": 5
+  },
+  {
+    "ID": 2,
+    "Nome": "Poção de Cura",
+    "Categoria": "Consumível",
+    "Valor": 50,
+    "Quantidade": 20
+  },
+  {
+    "ID": 3,
+    "Nome": "Escudo de Carvalho",
+    "Categoria": "Defesa",
+    "Valor": 180,
+    "Quantidade": 8
+  },
+  {
+    "ID": 4,
+    "Nome": "Elmo de Ferro",
+    "Categoria": "Armadura",
+    "Valor": 120,
+    "Quantidade": 10
+  },
+  {
+    "ID": 5,
+    "Nome": "Arco de Caça",
+    "Categoria": "Arma",
+    "Valor": 200,
+    "Quantidade": 6
+  },
+  {
+    "ID": 6,
+    "Nome": "Flecha de Madeira",
+    "Categoria": "Munição",
+    "Valor": 5,
+    "Quantidade": 200
+  },
+  {
+    "ID": 7,
+    "Nome": "Poção de Mana",
+    "Categoria": "Consumível",
+    "Valor": 60,
+    "Quantidade": 25
+  },
+  {
+    "ID": 8,
+    "Nome": "Anel da Força",
+    "Categoria": "Acessório",
+    "Valor": 300,
+    "Quantidade": 3
+  },
+  {
+    "ID": 9,
+    "Nome": "Botas de Couro",
+    "Categoria": "Armadura",
+    "Valor": 100,
+    "Quantidade": 12
+  },
+  {
+    "ID": 10,
+    "Nome": "Luvas do Caçador",
+    "Categoria": "Acessório",
+    "Valor": 90,
+    "Quantidade": 7
+  },
+  {
+    "ID": 11,
+    "Nome": "Martelo de Guerra",
+    "Categoria": "Arma",
+    "Valor": 320,
+    "Quantidade": 4
+  },
+  {
+    "ID": 12,
+    "Nome": "Poção de Velocidade",
+    "Categoria": "Consumível",
+    "Valor": 75,
+    "Quantidade": 15
+  },
+  {
+    "ID": 13,
+    "Nome": "Cajado de Carvalho",
+    "Categoria": "Arma",
+    "Valor": 270,
+    "Quantidade": 5
+  },
+  {
+    "ID": 14,
+    "Nome": "Capa do Andarilho",
+    "Categoria": "Vestuário",
+    "Valor": 150,
+    "Quantidade": 9
+  },
+  {
+    "ID": 15,
+    "Nome": "Colar de Safira",
+    "Categoria": "Acessório",
+    "Valor": 400,
+    "Quantidade": 2
+  },
+  {
+    "ID": 16,
+    "Nome": "Escudo de Aço",
+    "Categoria": "Defesa",
+    "Valor": 250,
+    "Quantidade": 6
+  },
+  {
+    "ID": 17,
+    "Nome": "Poção de Resistência ao Fogo",
+    "Categoria": "Consumível",
+    "Valor": 110,
+    "Quantidade": 10
+  },
+  {
+    "ID": 18,
+    "Nome": "Machado Duplo",
+    "Categoria": "Arma",
+    "Valor": 290,
+    "Quantidade": 5
+  },
+  {
+    "ID": 19,
+    "Nome": "Armadura de Aço",
+    "Categoria": "Armadura",
+    "Valor": 500,
+    "Quantidade": 3
+  },
+  {
+    "ID": 20,
+    "Nome": "Poção de Invisibilidade",
+    "Categoria": "Consumível",
+    "Valor": 200,
+    "Quantidade": 5
+  }
+]
