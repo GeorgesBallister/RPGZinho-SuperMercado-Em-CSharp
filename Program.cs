@@ -10,26 +10,25 @@ public class Program
     public static void Main()
     {
         // Criando Itens
-        Dictionary<int, Itens> TodosOsItensDoMercado = CriandoDados.CriandoItens();
+        Dictionary<int, Itens> TodosOsItensDoMercado = Modulos.CriandoDados.CriandoItens();
 
         //Criando prateleiras
-        Dictionary<int, Prateleira> TodasAsPrateleirasDoMercado = CriandoDados.CriandoPrateleiras(TodosOsItensDoMercado);
+        Dictionary<int, Prateleira> TodasAsPrateleirasDoMercado = Modulos.CriandoDados.CriandoPrateleiras(TodosOsItensDoMercado);
 
-        foreach (var values in TodasAsPrateleirasDoMercado)
-        {
-            values.Value.TestarPrateleiras();
-        }
+        //Criando Sacola
+        List<Itens> sacola = new List<Itens>();
+
 
         // Crud Lista de compras
         // Criar Itens Ficticios
         // 1 - Menuzinho ali com as operações
-            // Explorar Mercado
-                // Checar Categorias
-                    // Ver Itens
-                     // Adcionar item na sacola (Dicionario)
-            // Remover Item
-            // Ver Lista
-            // Comprar tudo
+        // Explorar Mercado
+        // Checar Categorias
+        // Ver Itens
+        // Adcionar item na sacola (Dicionario)
+        // Remover Item
+        // Ver Lista
+        // Comprar tudo
         // Aparecer nota fiscal
         // Relatorio 
 
@@ -62,7 +61,7 @@ public class Program
             {
                 case 1:
                     Console.Clear();
-                    Console.WriteLine("Explorando mercado");
+                    sacola = Modulos.Menu.ExplorarMercado(TodasAsPrateleirasDoMercado, sacola);
                     break;
 
                 case 6:

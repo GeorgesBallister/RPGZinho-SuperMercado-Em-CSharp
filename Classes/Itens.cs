@@ -27,14 +27,9 @@ namespace Classes
         }
 
 
-        // Função so pra testar usando Value.PrintarTudoTeste dentro do Dicionario de todosOsITens
-        public void PrintaTudoTeste()
+        public void MostrarInformacoesDoItem()
         {
-            Console.WriteLine(this.ID);
-            Console.WriteLine(this.Nome);
-            Console.WriteLine(this.Valor);
-            Console.WriteLine(this.Quantidade);
-            Console.WriteLine(this.Categoria);
+            Console.WriteLine($"ID: {this.ID} - {this.Nome} - R${this.Valor} - Quantidade Em Estoque{this.Quantidade}");
 
         }
     }

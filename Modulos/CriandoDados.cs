@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using Classes;
-using Newtonsoft.Json;
+﻿using Classes;
 using JsonSerializer = System.Text.Json.JsonSerializer; // seu namespace com Itens, Prateleira, CorredoresClasse
 
+namespace Modulos;
 public static class CriandoDados
 {
     // To usando Dicionario aqui porque meu foco é usar o dicionario, sei que é mais facil com outras estruturas, mas este é o meu desafio, quero puxar o JSon para uma lista e puxar os itens dessa lista como dicionarios
@@ -29,59 +26,44 @@ public static class CriandoDados
     }
 
 
-    // Só para testar a minha teoria de que se eu for puxar os dados e utilziando uma lista daria no memso
-    //public static void TesteParalelo()
-    //{
-
-    //    // Caminho do Json com os produtos Ficticios:
-    //    string caminhoDadosItens = "..\\..\\..\\Dados Ficticios\\TodoOsProdutos.json";
-
-    //    // Ler arquivo
-    //    string jsonString = File.ReadAllText(caminhoDadosItens);
-
-    //    var dadosDoArquivo = JsonSerializer.Deserialize<List<Itens>>(jsonString)
-    //                     ?? new List<Itens>(); // garante não ser null
-
-    //    for (int i = 0; i < dadosDoArquivo.Count; i++)
-    //    {
-    //        dadosDoArquivo[i].PrintaTudoTeste();
-
-    //    }
-    //}
-
-
-
     public static Dictionary<int, Prateleira> CriandoPrateleiras(Dictionary<int, Itens> dicionarioDeItens)
     {
-        Dictionary<int, Prateleira> prateleiras = new Dictionary<int, Prateleira>();
+        if (dicionarioDeItens == null) throw new ArgumentNullException(nameof(dicionarioDeItens));
 
-        // Organizar as prateleiras por categorias, lendo todos os dados dos itens, lendo suas categorias, criando somente prateleiras com nomes de categorias que existem dentro do JSON
+        var prateleiras = new Dictionary<int, Prateleira>();
 
-        // 1. Ler Dicionario de Itens e Puxar as categorias;
-        List<string> categorias = new List<string>();
-        foreach (var valores in dicionarioDeItens.Values)
-        {
-            categorias.Add(valores.Categoria);
-        }
+        // 1. Puxar categorias únicas (case-insensitive)
+        var categorias = dicionarioDeItens.Values
+            .Select(i => i.Categoria ?? string.Empty)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList();
 
-        // 2. Montar Prateleiras com base nas categorias
+        // 2. Montar prateleiras com base nas categorias
         for (int i = 0; i < categorias.Count; i++)
         {
-            //Molde para armazenar valores
-            var prateleiraModelo = new Prateleira();
-            prateleiraModelo.ID = i;
-            prateleiraModelo.Categoria = categorias[i];
-
-            // 2.1 Adcionar itens somente daquela categoria
-            foreach (var valores in dicionarioDeItens)
+            var prateleiraModelo = new Prateleira
             {
-                if (valores.Value.Categoria == categorias[i])
+                ID = i,
+                Categoria = categorias[i],
+                Itens = new List<Itens>() // garante lista inicializada
+            };
+
+
+            // 2.1 Adicionar itens somente daquela categoria (case-insensitive)
+            foreach (var kvp in dicionarioDeItens)
+            {
+                var item = kvp.Value;
+                if (string.Equals(item.Categoria, categorias[i], StringComparison.OrdinalIgnoreCase))
                 {
-                    prateleiraModelo.Itens.Add(valores.Value);
+                    prateleiraModelo.Itens.Add(item);
                 }
             }
-           prateleiras.Add(i, prateleiraModelo);
+
+            prateleiras.Add(i, prateleiraModelo);
         }
+
         return prateleiras;
     }
+
+
 }

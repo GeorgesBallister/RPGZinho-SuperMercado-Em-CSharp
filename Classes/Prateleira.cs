@@ -23,10 +23,12 @@ namespace Classes
 
 
         // Testar 
-        public void TestarPrateleiras()
-        {
-            Console.WriteLine(this.ID);
-            Console.WriteLine(this.Categoria);
-        }
+        //public void TestarPrateleiras()
+        //{
+        //    Console.WriteLine(this.ID);
+        //    Console.WriteLine(this.Categoria);
+        //    // Lambda Pra testar todos os Produtos
+        //    this.Itens.ForEach(itens => itens.PrintaTudoTeste());
+        //}
     }
 }
